@@ -1,0 +1,11 @@
+{
+  "name": "wordguessing",
+  "version": "1.0.0",
+  "description": "guess words via CLI",
+  "main": "wordguess.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
