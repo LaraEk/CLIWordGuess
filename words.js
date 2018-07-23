@@ -15,6 +15,7 @@
 
 // requiring our Student module exported from student.js
 var Student = require("./student.js");
+// -------- var word = require("./letters.js");
 
 // constructor function for creating classroom objects
 var Classroom = function(profName, roomNum) {
@@ -35,3 +36,5 @@ var Classroom = function(profName, roomNum) {
 
 // exporting our Classroom constructor. We will require it in main.js
 module.exports = Classroom;
+// -------- 
+module.exports = words;

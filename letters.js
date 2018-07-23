@@ -1,4 +1,6 @@
-// * **Letter.js**: Contains a constructor, Letter. This constructor should be able to either display an underlying character or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter. That means the constructor should define:
+// * **Letter.js**: Contains a constructor, Letter. This constructor should be able to either display an underlying character 
+//                  or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter. 
+// 					That means the constructor should define:
 
 //   * A string value to store the underlying character for the letter
 
@@ -18,11 +20,30 @@
 // ----------- this one used to be STUDENT.JS ---------- //
 
 // constructor function for creating student objects
-var Student = function(name, favoriteSub, gpa) {
-	this.name = name;
-	this.favoriteSub = favoriteSub;
-	this.gpa = gpa;
-};
+// var Student = function(name, favoriteSub, gpa) {
+// 	this.name = name;
+// 	this.favoriteSub = favoriteSub;
+// 	this.gpa = gpa;
+// };
 
 // exporting our Student constructor
-module.exports = Student;
+// module.exports = Student;
+
+var inquirer = require("inquirer");
+
+var letter = function() {
+	this.storecharacter = storecharacter;
+//   * string -- store the underlying character
+	this.letterguessedyet = letterguessedyet;
+//   * boolean -- stores whether letter has been guessed yet
+	this.(a fucntion that does that)
+//   * function = returns the underlying character if letter has been guessed, or _ if letter has not been guessed
+	this.(as it says)
+//   * function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
+	this.printstats = function() {
+
+	}
+};
+
+
+module.exports = letters;

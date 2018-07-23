@@ -11,6 +11,7 @@
 
 // requiring our Classroom module exported from classroom.js
 var Classroom = require("./Classroom.js");
+// -------- var words = require("./words.js");
 
 // creating and storing a new classroom object
 var firstClass = new Classroom("Ahmed", 3187);
