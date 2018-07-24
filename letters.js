@@ -29,21 +29,31 @@
 // exporting our Student constructor
 // module.exports = Student;
 
-var inquirer = require("inquirer");
+//var inquirer = require("inquirer");
 
-var letter = function() {
-	this.storecharacter = storecharacter;
+var letter = function(theletter) {
+	this.theletter = theletter;
 //   * string -- store the underlying character
-	this.letterguessedyet = letterguessedyet;
+	this.guessed = false;
 //   * boolean -- stores whether letter has been guessed yet
-	this.(a fucntion that does that)
-//   * function = returns the underlying character if letter has been guessed, or _ if letter has not been guessed
-	this.(as it says)
-//   * function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
-	this.printstats = function() {
-
+	this.showletter = function() {
+		if (this.guessed === true) {
+			return this.theletter
+		} else {
+			return "_"
+		}
 	}
+//   * function = returns the underlying character if letter has been guessed, or _ if letter has not been guessed
+	this.checkguessed = function(guess) {
+		if (guess === this.theletter) {
+			this.guessed = true;
+		}
+	}
+//   * function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
 };
 
+// var letter = new letter("a");
+// letter.showletter();
+// console.log(letter);
 
 module.exports = letters;
