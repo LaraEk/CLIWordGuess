@@ -56,4 +56,4 @@ var letter = function(theletter) {
 // letter.showletter();
 // console.log(letter);
 
-module.exports = letters;
+module.exports = letter;
