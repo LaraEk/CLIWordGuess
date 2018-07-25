@@ -3,22 +3,22 @@
 var word = require("./words.js");
 var inquirer = require("inquirer");
 
-wordlist = ["AMBORELLA", "NYMPHAEALES", "ILLICIALES", "TRIMENIACEAE", "EUDICOTS", "MONOCOTS", "MAGNOLIIDS", "PALEODICOTS", "CHLORANTHACEAE", "CERATOPHYLLALES"];
+wordlist = ["TEST WORD"];
 
-var pickaword = 0;
+var select = 0;
 var chosenword = "";
 var gameword = "";
 var counter = 0;
 
 function startGame() {
-    pickaword = Math.floor(Math.random()*wordlist.length);
-    chosenword = wordlist[pickaword];
+    select = Math.floor(Math.random()*wordlist.length);
+    chosenword = wordlist[select];
     gameword = new word(chosenword);
     gameword.makeword();
-    // if (pickaword > -1) {
-    //     wordlist.splice(pickaword, 1);
+    // if (select > -1) {
+    //     wordlist.splice(select, 1);
     // }
-    console.log("the category is Angiosperms.  10 chances");
+    console.log("10 chances");
     promptuser();
 }
 
@@ -34,14 +34,12 @@ function promptuser() {
         ]).then(function(data) {
             checkanswer(data);
         });
-    // } else if (gameword.showword() == chosenword) {
-    //     rightguess();
     } else {
         console.log("no more guess");
-        console.log("the correct word was" + chosenword);
+//        console.log(chosenword.rainbow);
         chosenword = "";
         gameword = "";
-        pickaword = 0;
+        select = 0;
         counter = 0;
         startGame();
     }
@@ -68,13 +66,13 @@ function checkanswer(data) {
 
 function rightguess() {
     console.log("right!!!!!");
-//    if (chosenword.replace(/_/g,"") == (gameword.showword()).replace(/_/g,"")) {
-    if (gameword.showword() == chosenword) {
+    if (chosenword.replace(/_/g,"") == (gameword.showword()).replace(/_/g,"")) {
+//        console.log(gameword.showword().america);
         console.log(gameword.showword());
         console.log("winrar");
         chosenword = "";
         gameword = "";
-        pickaword = 0;
+        select = 0;
         counter = 0;
         startGame();
     } else {
