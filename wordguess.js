@@ -4,6 +4,7 @@ var word = require("./words.js");
 var inquirer = require("inquirer");
 
 wordlist = ["AMBORELLA", "NYMPHAEALES", "ILLICIALES", "TRIMENIACEAE", "EUDICOTS", "MONOCOTS", "MAGNOLIIDS", "PALEODICOTS", "CHLORANTHACEAE", "CERATOPHYLLALES"];
+//wordlist = ["TEST WORD"];
 
 var pickaword = 0;
 var chosenword = "";
@@ -48,10 +49,20 @@ function promptuser() {
 }
 
 function checkanswer(data) {
-    if((data.letter.length === 1) && /^[a-zA-Z]+$/.test(data.letter)) {
+   if((data.letter.length === 1) && /^[a-zA-Z]+$/.test(data.letter)) {
+        // note: /^[a-zA-Z]+$/ : https://stackoverflow.com/questions/2790813/regular-expression-a-za-z-or-a-za-z
         var checkable = data.letter.toUpperCase();
         var temp = gameword.showword();
         gameword.checkGuess(checkable);
+        // if (chosenword.replace(/_/g," ") == (gameword.showword()).replace(/_/g," ")) {
+        //      rightguess();
+        // } else {
+        //     console.log("wrong lett");
+        //     counter++;
+        //     console.log((10 - counter) + "guesses left");
+        //     promptuser();
+        // }
+
         if (temp === gameword.showword()) {
             console.log("wrong lett");
             counter++;
@@ -68,8 +79,8 @@ function checkanswer(data) {
 
 function rightguess() {
     console.log("right!!!!!");
-//    if (chosenword.replace(/_/g,"") == (gameword.showword()).replace(/_/g,"")) {
-    if (gameword.showword() == chosenword) {
+   if (chosenword.replace(/_/g," ") == (gameword.showword()).replace(/_/g," ")) {
+        // note: .replace(/_/g," ") replaces underscores with spaces
         console.log(gameword.showword());
         console.log("winrar");
         chosenword = "";
@@ -79,7 +90,7 @@ function rightguess() {
         startGame();
     } else {
         promptuser();
-    }
+     }
 }
 
 startGame();
