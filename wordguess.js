@@ -79,8 +79,12 @@ function checkanswer(data) {
 
 function rightguess() {
     console.log("right!!!!!");
-   if (chosenword.replace(/_/g," ") == (gameword.showword()).replace(/_/g," ")) {
+   // console.log(chosenword);
+   // console.log(gameword.showword());
+//    if (chosenword.replace(/_/g," ") == (gameword.showword()).replace(/_/g," ")) {
         // note: .replace(/_/g," ") replaces underscores with spaces
+    if (chosenword.trim().toUpperCase() == gameword.showword().trim().toUpperCase()) {
+        console.log("test");
         console.log(gameword.showword());
         console.log("winrar");
         chosenword = "";
